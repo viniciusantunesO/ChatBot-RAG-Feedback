@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    container_name: chatbot-app
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_URL=http://host.docker.internal:11434/api/generate
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    volumes:
+      - .:/app
+      - chroma_data:/app/chroma_langchain_db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - chatbot-network
+
+volumes:
+  chroma_data:
+
+networks:
+  chatbot-network:
+    driver: bridge
