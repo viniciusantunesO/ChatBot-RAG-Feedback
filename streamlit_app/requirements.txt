@@ -1,7 +1,0 @@
-streamlit
-requests
-pandas
-langchain
-langchain-ollama
-langchain-chroma
-chromadb
