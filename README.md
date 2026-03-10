@@ -1,9 +1,9 @@
 # 🐘 Elephant AI - Chatbot com Feedback Inteligente
 
 ## 📝 Descrição do Projeto
-[cite_start]O **Elephant AI** é uma solução de chatbot desenvolvida para demonstrar a implementação de um fluxo de **RAG (Retrieval-Augmented Generation)** com um sistema de **feedback em tempo real**[cite: 4, 5]. 
+O **Elephant AI** é uma solução de chatbot desenvolvida para demonstrar a implementação de um fluxo de **RAG (Retrieval-Augmented Generation)** com um sistema de **feedback em tempo real**. 
 
-[cite_start]O projeto foca na orquestração de um agente de IA que utiliza uma base de dados vetorial para contexto, consome APIs externas e, o mais importante, **aprende e adapta seu comportamento** dinamicamente com base nas sugestões enviadas pelo usuário durante o uso[cite: 26, 30].
+O projeto foca na orquestração de um agente de IA que utiliza uma base de dados vetorial para contexto, consome APIs externas e, o mais importante, **aprende e adapta seu comportamento** dinamicamente com base nas sugestões enviadas pelo usuário durante o uso.
 
 ---
 
@@ -20,7 +20,7 @@ ollama pull mxbai-embed-large
 
 ## 🚀 Como Executar o Projeto
 
-### [cite_start]🐳 Via Docker (Recomendado) [cite: 66, 69]
+### 🐳 Via Docker (Recomendado)
 Este projeto está totalmente dockerizado para garantir que o ambiente de execução seja idêntico em qualquer máquina.
 
 1.  **Certifique-se de ter o Docker instalado.**
@@ -32,33 +32,33 @@ Este projeto está totalmente dockerizado para garantir que o ambiente de execu�
 
 ### 🐍 Execução Local
 1.  Crie um ambiente virtual: `python -m venv venv`
-2.  [cite_start]Instale as dependências[cite: 70]: `pip install -r requirements.txt`
+2.  Instale as dependências: `pip install -r requirements.txt`
 3.  Execute: `streamlit run app.py`
 
 ---
 
-## [cite_start]🛠️ Funcionalidades e Arquitetura [cite: 6, 18]
+## 🛠️ Funcionalidades e Arquitetura 
 
-[cite_start]O sistema foi organizado em duas áreas principais, conforme exigido pelos requisitos[cite: 8, 35]:
+O sistema foi organizado em duas áreas principais, conforme exigido pelos requisitos:
 
-### [cite_start]1. Área de Chat (Interface do Agente) [cite: 9]
-* [cite_start]**Histórico Visível:** Implementado via `st.session_state` para garantir que as mensagens não se percam entre interações[cite: 11].
-* [cite_start]**Interface Interativa:** Campo de entrada otimizado para perguntas e respostas rápidas[cite: 12].
+### 1. Área de Chat (Interface do Agente) 
+* **Histórico Visível:** Implementado via `st.session_state` para garantir que as mensagens não se percam entre interações.
+* **Interface Interativa:** Campo de entrada otimizado para perguntas e respostas rápidas.
 
-### [cite_start]2. Sistema de Feedback e Melhoria [cite: 13, 26]
-* [cite_start]**Captura de Feedback:** O usuário pode enviar sugestões de melhoria (ex: "seja mais conciso")[cite: 14, 15, 27].
-* [cite_start]**Atualização de Prompt:** O sistema processa o feedback e o injeta no `SYSTEM_PROMPT` do agente instantaneamente[cite: 59, 60].
-* [cite_start]**Versão e Logs:** É possível visualizar o prompt atual "sob o capô" e o histórico de todas as alterações feitas[cite: 16, 17, 31].
+### 2. Sistema de Feedback e Melhoria 
+* **Captura de Feedback:** O usuário pode enviar sugestões de melhoria (ex: "seja mais conciso").
+* **Atualização de Prompt:** O sistema processa o feedback e o injeta no `SYSTEM_PROMPT` do agente instantaneamente.
+* **Versão e Logs:** É possível visualizar o prompt atual "sob o capô" e o histórico de todas as alterações feitas.
 
-### [cite_start]3. Ferramentas e Integrações (Tools) [cite: 22, 43]
-[cite_start]O Elephant utiliza integrações externas para enriquecer suas respostas[cite: 56]:
-* [cite_start]**ViaCEP API:** Consulta automática de endereços ao identificar um CEP na conversa[cite: 23, 87].
-* [cite_start]**Dog API:** Ferramenta lúdica para exibição de imagens aleatórias de pets[cite: 25, 86].
-* [cite_start]**Vector Store (ChromaDB):** Base de dados para recuperação de documentos e contexto do dataset[cite: 21, 41, 55].
+### 3. Ferramentas e Integrações (Tools) 
+O Elephant utiliza integrações externas para enriquecer suas respostas:
+* **ViaCEP API:** Consulta automática de endereços ao identificar um CEP na conversa (certifique-se de que na hora de digitar o cep, ter espaço entre os primeiros e ultimos numeros. Ex: "Qual cidade do cep 03247046 ?").
+* **Dog API:** Ferramenta lúdica para exibição de imagens aleatórias de pets (para aparecer a imagem, deve mencionar a palavra "cachorro").
+* **Vector Store (ChromaDB):** Base de dados para recuperação de documentos e contexto do dataset (foi usado dados sobre pokemon).
 
 ---
 
-## [cite_start]🔌 Documentação das APIs Utilizadas [cite: 68]
+## 🔌 Documentação das APIs Utilizadas 
 
 | API | Finalidade | Endpoint |
 | :--- | :--- | :--- |
@@ -68,19 +68,19 @@ Este projeto está totalmente dockerizado para garantir que o ambiente de execu�
 
 ---
 
-## [cite_start]🏗️ Requisitos Técnicos Atendidos [cite: 38]
-* [cite_start]**Python 3.9+** [cite: 40]
-* [cite_start]**Interface:** Streamlit [cite: 33]
-* [cite_start]**LLM:** Llama 3 (via Ollama) / Integração via API [cite: 20, 42]
-* [cite_start]**Containerização:** Docker e Docker Compose [cite: 44, 76]
-* [cite_start]**RAG:** Busca vetorial para contexto persistente [cite: 55]
+## 🏗️ Requisitos Técnicos Atendidos 
+* **Python 3.9+** 
+* **Interface:** Streamlit 
+* **LLM:** Llama 3 (via Ollama) / Integração via API 
+* **Containerização:** Docker e Docker Compose 
+* **RAG:** Busca vetorial para contexto persistente 
 
 ---
 
 ## 💡 Exemplo de Uso
-1.  **Chat:** "Qual é o endereço do CEP 01001-000?"
+1.  **Chat:** "Qual é o endereço do CEP 01001-000 ?"
 2.  **Feedback:** Vá na aba "Feedback", digite "Responda de forma mais amigável e use emojis" e clique em atualizar.
-3.  [cite_start]**Resultado:** Nas próximas interações, o Elephant adotará automaticamente o novo tom sugerido[cite: 60].
+3.  **Resultado:** Nas próximas interações, o Elephant adotará automaticamente o novo tom sugerido.
 
 ---
-Desenvolvido como critério de avaliação para o processo seletivo de Estágio em Desenvolvimento.
+
